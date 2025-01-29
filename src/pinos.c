@@ -11,7 +11,7 @@ const uint button_A = 5; // Botão A = 5
 static volatile uint a = 1;
 static volatile uint32_t last_time = 0; // Armazena o tempo do último evento (em microssegundos)
 
-#define DELAY 1/5000 // Configurar tempo de delay para permitir que o led pisque continuamente 5 vezes por segundo
+#define DELAY 1000/5 // Configurar tempo de delay para permitir que o led pisque continuamente 5 vezes por segundo (1000ms/5vezes = 200 vezes por ms)
 
 void pinosInit(){
     // Inicializa o pino do LED RGB e configura pro GPIO13

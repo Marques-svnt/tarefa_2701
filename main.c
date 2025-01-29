@@ -26,10 +26,10 @@ int main()
     stdio_init_all();
     initializePio();
 
-    // Loop que vai acender o LED RGB piscar continuamente 5 vezes por segundo
+    // Loop Principal
     while (1)
     {
-        ledRed();
+        ledRed(); // Função responsável por fazer o led piscar 5 vezes por segundo
     }
 
     // Configuração da interrupção com callback
