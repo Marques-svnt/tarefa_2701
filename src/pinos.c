@@ -6,6 +6,8 @@ const uint ledR_pin = 13; // Red => GPIO13
 const uint ledB_pin = 12; // Blue => GPIO12
 const uint ledG_pin = 11; // Green=> GPIO11
 const uint button_A = 5; // Botão A = 5
+const uint button_B = 6; // Botão B = 6
+
 
 // Variáveis globais
 static volatile uint a = 1;
@@ -18,10 +20,14 @@ void pinosInit(){
     gpio_init(ledR_pin);
     gpio_set_dir(ledR_pin, GPIO_OUT);
 
-    // Configurar o pino do botão A e habilitar o pull-up interno
+    // Configurar o pino do botão A e B e habilitar o pull-up interno
     gpio_init(button_A);
     gpio_set_dir(button_A, GPIO_IN); 
     gpio_pull_up(button_A);
+
+    gpio_init(button_B);
+    gpio_set_dir(button_B, GPIO_IN); 
+    gpio_pull_up(button_B);
 }
 
 void ledRed() {
@@ -41,8 +47,6 @@ void gpio_irq_handler(uint gpio, uint32_t events)
     if (current_time - last_time > 200000) // 200 ms de debouncing
     {
         last_time = current_time; // Atualiza o tempo do último evento
-        printf("Mudanca de Estado do Led R = %d\n", a);
-        gpio_put(ledR_pin, !gpio_get(ledR_pin)); // Alterna o estado
-        a++;                                     // incrementa a variavel de verificação
+        a++;                     // incrementa a variavel de verificação
     }
 }
