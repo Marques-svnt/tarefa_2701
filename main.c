@@ -5,8 +5,8 @@
 #include "hardware/clocks.h"
 #include "pio.h"
 #include "pinos.h"
+#include "interrupt.h"
 
-#define IS_RGBW false
 #define NUM_PIXELS 25
 #define WS2812_PIN 7
 #define button_A 5
@@ -19,7 +19,6 @@ int main()
     stdio_init_all();
     initializePio();
 
-    bool ultimo_estado_botao = true; // Último estado do botão (inicialmente solto)
     int index = 0;
     set_one_led(0, 0, 0, 100); // Número inicial que será já mostrado assim que iniciar o código
     

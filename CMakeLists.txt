@@ -37,7 +37,8 @@ pico_sdk_init()
 
 add_executable(main main.c
                 src/pio.c
-                src/pinos.c)
+                src/pinos.c
+                src/interrupt.c)
 
 pico_set_program_name(main "main")
 pico_set_program_version(main "0.1")

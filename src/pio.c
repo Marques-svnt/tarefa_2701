@@ -9,7 +9,6 @@
 #define NUM_PIXELS 25
 #define WS2812_PIN 7
 
-
 /* Buffer para armazenar quais LEDs estão ligados matriz 5x5 e configurar os números que irão aparecer na matriz
 (obs: devido a organização do diagrama, teremos que configurar as matrizes "espelhadas")*/
 bool led_buffer[10][NUM_PIXELS] = {
