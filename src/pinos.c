@@ -54,6 +54,8 @@ void gpio_irq_handler(uint gpio, uint32_t events)
     if (gpio == button_A) {
         if (current_time - last_time_A > 200000) {  // 200 ms debounce para botão A
             last_time_A = current_time;
+            printf("A: %d\n", a);
+            a++;
             if (index != 9)
             {
                 index++;
@@ -67,6 +69,8 @@ void gpio_irq_handler(uint gpio, uint32_t events)
     } else if (gpio == button_B) {
         if (current_time - last_time_B > 200000) {  // 200 ms debounce para botão B
             last_time_B = current_time;
+            printf("B: %d\n", a);
+            a++;
             {
             if (index != 0)
             {
