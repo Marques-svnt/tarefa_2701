@@ -19,9 +19,9 @@ int main()
     stdio_init_all();
     initializePio();
 
-    int index = 0;
+    int index = 0; // Variável de controle de qual número será exibido na matriz 5x5
     set_one_led(0, 0, 0, 100); // Número inicial que será já mostrado assim que iniciar o código
-    
+
     // Configuração da interrupção com callback
     gpio_set_irq_enabled_with_callback(button_A, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
     gpio_set_irq_enabled_with_callback(button_B, GPIO_IRQ_EDGE_FALL, true, &gpio_irq_handler);
