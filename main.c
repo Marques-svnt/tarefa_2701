@@ -30,6 +30,8 @@ int main()
 
     bool ultimo_estado_botao = true; // Último estado do botão (inicialmente solto)
     int index = 0;
+    set_one_led(0, led_r, led_g, led_b); // Número inicial que será já mostrado assim que iniciar o código
+
     // Loop Principal
     while (1)
     {
@@ -47,14 +49,24 @@ int main()
                 printf("A = %d\n", index);
                 set_one_led(index, led_r, led_g, led_b);
             }
+            else
+            {
+                set_one_led(index, 100, 0, 0);
+            }
         }
         else if (estado_atual_botao_B == false && ultimo_estado_botao == true)
+        {
             if (index != 0)
             {
                 index--;
                 printf("A = %d\n", index);
                 set_one_led(index, led_r, led_g, led_b);
             }
+            else
+            {
+                set_one_led(index, 100, 0, 0);
+            }
+        }
         ultimo_estado_botao = estado_atual_botao_A;
         ultimo_estado_botao = estado_atual_botao_B;
     }
