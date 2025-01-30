@@ -102,6 +102,7 @@ void set_one_led(int index, int8_t r, uint8_t g, uint8_t b)
     }
 }
 
+// Função que vai inicializar o PIO no microcontrolador
 void initializePio()
 {
     PIO pio = pio0;
