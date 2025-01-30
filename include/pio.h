@@ -13,5 +13,6 @@ void initializePio();
 #define PIN_LED_R 13
 #define PIN_LED_B 12
 #define PIN_LED_G 11
+#define IS_RGBW false
 
 #endif

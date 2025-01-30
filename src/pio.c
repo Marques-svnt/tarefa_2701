@@ -4,10 +4,7 @@
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
 #include "ws2812.pio.h"
-
-#define IS_RGBW false
-#define NUM_PIXELS 25
-#define WS2812_PIN 7
+#include "pio.h"
 
 /* Buffer para armazenar quais LEDs estão ligados matriz 5x5 e configurar os números que irão aparecer na matriz
 (obs: devido a organização do diagrama, teremos que configurar as matrizes "espelhadas")*/
@@ -83,7 +80,7 @@ static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b)
     return ((uint32_t)(r) << 8) | ((uint32_t)(g) << 16) | (uint32_t)(b);
 }
 
-void set_one_led(int index, int8_t r, uint8_t g, uint8_t b)
+void set_one_led(int index, uint8_t r, uint8_t g, uint8_t b)
 {
     // Define a cor com base nos parâmetros fornecidos
     uint32_t color = urgb_u32(r, g, b);
