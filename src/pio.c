@@ -84,7 +84,6 @@ static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b)
     return ((uint32_t)(r) << 8) | ((uint32_t)(g) << 16) | (uint32_t)(b);
 }
 
-
 void set_one_led(int index, int8_t r, uint8_t g, uint8_t b)
 {
     // Define a cor com base nos parâmetros fornecidos
@@ -99,12 +98,13 @@ void set_one_led(int index, int8_t r, uint8_t g, uint8_t b)
         }
         else
         {
-            put_pixel(0);  // Desliga os LEDs com zero no buffer
+            put_pixel(0); // Desliga os LEDs com zero no buffer
         }
     }
 }
 
-void initializePio(){
+void initializePio()
+{
     PIO pio = pio0;
     int sm = 0;
     uint offset = pio_add_program(pio, &ws2812_program);
