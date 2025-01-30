@@ -32,9 +32,9 @@ void pinosInit(){
 
 void ledRed() {
     gpio_put(ledR_pin, 1);  // Liga o LED RGB na cor vermelha
-    sleep_ms(DELAY);
+    sleep_ms(DELAY/2);
     gpio_put(ledR_pin, 0);  // Desliga o LED RGB na cor vermelha
-    sleep_ms(DELAY);
+    sleep_ms(DELAY/2);
 }
 
 // Função de interrupção com debouncing
