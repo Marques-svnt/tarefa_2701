@@ -42,6 +42,7 @@ void gpio_irq_handler(uint gpio, uint32_t events)
         else
         {
             set_one_led(index, 100, 0, 0);
+            printf("Não é possível incrementar acima do 9\n");
         }
     }
     // Decrementação do número da matriz de leds
@@ -59,6 +60,7 @@ void gpio_irq_handler(uint gpio, uint32_t events)
             else
             {
                 set_one_led(index, 100, 0, 0);
+                printf("Não é possível decrementar abaixo do 0\n");
             }
         }
     }
