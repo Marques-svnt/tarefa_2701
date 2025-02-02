@@ -62,7 +62,7 @@ Para testar o programa sem hardware físico, você pode utilizar o **Wokwi** par
 
 ## Demonstração no YouTube
 
-Confira a demonstração completa deste projeto no YouTube: [Demonstração do Projeto](https://www.youtube.com)
+Confira a demonstração completa deste projeto no YouTube: [Demonstração do Projeto](https://www.youtube.com/watch?v=K7_jLZIhUWI)
 
 ---
 
